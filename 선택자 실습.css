@@ -1,0 +1,49 @@
+ul {
+    list-style: none;
+}
+
+.dictionary {
+    border: salmon 3px solid;
+}
+.dictionary>ul>li>a {
+    text-decoration: none;
+    color: black;
+}
+
+/*li태그가 block 속성일 때 float속성으로 정렬*/
+.hashtag>ul>li{
+    float: right;
+    background-color: blue;
+    color: #ffffff;
+    margin: 0 5px;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.hashtag-inline {
+    clear: both;
+}
+.hashtag-inline>span {
+    position: relative;
+    left: 55%;
+
+    background-color: blue;
+    color: #ffffff;
+    margin: 0 5px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.notice>ul>li {margin: 5px 0;}
+.notice>ul>li::after {
+    content: "N";
+    color: #ffffff;
+    background-color: #ffd117;
+    border-radius: 50%;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    margin-left: 5px;
+}

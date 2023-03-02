@@ -1,0 +1,272 @@
+.my-box {
+    width: 150px;
+    height: 150px;
+    background-color: orange;
+}
+
+.trans {
+    transform: translate(10px, -10px);
+}
+
+.rotate {
+    transform: rotate(30deg);
+}
+
+.transform {
+    transform: translate(100px ,0)
+                scale(0.8) skewX(20deg) ;
+}
+
+.transform-3d {
+    transform: rotateX(60deg) rotateY(30deg) 
+                translate3d(0,0,-20px);
+}
+
+/* 전환이 될 방법을 알려줘야한다(hover 등)*/
+.transition:hover {
+    background-color: red;
+    transition: background-color 1s;
+}
+.transition {
+    transition: background-color 0.5s;
+}
+
+.transform-transition:hover {
+    transform: translate(100px,0) rotate(90deg);
+    width: 200px;
+    transition: all 1s;
+    transition-delay: 0.5s;
+}
+.transform-transition {
+    transition: transform 1s, width 1s;
+}
+
+.linear-transition:hover {
+    transform: rotate(90deg);
+    transition: all 1s;
+    transition-timing-function: linear;
+}
+
+input[type="checkbox"]:checked+span {
+    color: blue;
+    transition: color 1s;
+}
+input[type="checkbox"]+span {
+    transition: color 1s;
+}
+.after-transition>p::after {
+    content: "새로운 내용이 나타납니다";
+    background-color: black;
+    color: white;
+    position: absolute;
+    width :100%;
+    left: 0;
+    opacity: 0;
+}
+.after-transition>p:hover:after {
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.line {
+    position: absolute;
+    box-sizing: content-box;
+    width: 300px;
+    height: 300px;
+    background-color: black;
+    z-index: 10;
+    opacity: 0;
+}
+.line:hover {
+    opacity: 1;
+    transition: all 0.5s;
+}
+.content-container {
+    width: 300px;
+    height: 300px;
+    background-color: brown;
+    overflow: hidden;
+}
+.content-container>.img {
+    background-image: url(./img/bird.jpg);
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.5s;
+}
+.content-container>.img{
+    transform: scale(1.2);
+    transition: all 0.5s;
+}
+
+.content-container2 {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    background-color: black;
+    overflow: hidden;
+}
+.content-container2>.img {
+    background-image: url(./img/bird.jpg);
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.5s;
+}
+.content-container2>.img:hover {
+    opacity: 0.8;
+    transform: scale(1.2);
+    transition: all 0.5s;
+}
+
+.content-container>.img2 {
+    width: 300px;
+    height: 300px;
+    background-image: url(./img/bird.jpg);
+    background-size: cover;
+}
+.content-container>.black {
+    position: absolute;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 130px;
+    width: 300px;
+    height: 300px;
+    background-color: black;
+    opacity: 0;
+}
+.content-container:hover>.black {
+    opacity: 0.5;
+    transition: all 1s;
+}
+.animation {
+    animation-name: movingback;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes moving {
+    from { transform: translate(0,0);}
+    to { transform: translate(100px,0);}
+}
+
+@keyframes movingback {
+    0% { transform: translate(0,0);}
+    50% { transform: translate(200px,0);}
+    100% { transform: translate(0,0);}
+}
+
+.wrap {
+    overflow: hidden;
+}
+
+.animation-box {
+    animation: movingbox 4s infinite;
+
+}
+@keyframes movingbox {
+    0% {}
+    20% {
+        transform: rotate(90deg);
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 0%;
+        border-bottom-right-radius: 0%;
+        border-top-right-radius: 0%;
+
+    }
+    40% {
+        transform: rotate(180deg);
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 0%;
+        border-top-right-radius: 0%;
+
+    }
+    60% {
+        transform: rotate(270deg);
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-top-right-radius: 0%;
+    }
+    80% {
+        transform: rotate(360deg);
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-top-right-radius: 50%;
+        background-color: orangered;
+    }
+    100% {
+        transform: rotate(360deg);
+        border-top-left-radius: 0%;
+        border-bottom-left-radius: 0%;
+        border-bottom-right-radius: 0%;
+        border-top-right-radius: 0%;
+    }
+}
+
+.text {
+    position: absolute;
+    box-sizing: border-box;
+    width: 150px;
+    height: 150px;
+    padding-top: 50px;
+    text-align: center;
+    z-index: 10;
+}
+
+.filter {
+    width: 300px;
+}
+
+.filter:hover {
+    filter: blur(5px) brightness(1.2);
+    transition: all 1s;
+}
+
+.image-list>.content-image {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+}
+.image-list>.content-image:nth-child(1) {
+    background-image: url(./img/bird.jpg);
+}
+.image-list>.content-image:nth-child(1):hover {
+    filter: invert();
+}
+.image-list>.content-image:nth-child(2) {
+    background-image: url(./img/bird2.jpg);
+    filter:contrast(50%);
+}
+.image-list>.content-image:nth-child(3) {
+    background-image: url(./img/bird3.jpg);
+    filter: sepia(20%);
+}
+.pencle {
+    background-image: url(./img/pencil-solid.svg);
+    width: 50px;
+    height: 50px;
+    animation: rotatepencle 1s infinite;
+}
+@keyframes rotatepencle {
+    0% {transform: rotate(0);}
+    10% {transform: rotate(-30deg);}
+    65%  {transform: rotate(30deg);}
+    75% {transform: rotate(0);}
+    100% {transform: rotate(0);}
+}
+
+.mix-blend {
+    position: fixed;
+    top: 0;
+    color: white;
+    mix-blend-mode: difference;
+}
+body {
+    background-color: white;
+}

@@ -1,0 +1,42 @@
+body, ul { padding: 0; margin: 0;}
+ul {list-style: none;}
+a {text-decoration: none;}
+
+/*nav - gnb 정리*/
+.nav>.gnb {
+    display: flex;
+    background-color: darksalmon;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+/* li 요소가 아닌 gnb에 마우스를 올렸을때 보임*/
+.nav>.gnb:hover .gnb-sub {
+    visibility: visible;
+    z-index: 10;
+}
+.nav>.gnb>li:hover>a {
+    color: blue;
+    font-weight: bold;
+}
+.nav:hover+.backgroud {
+    height: 80px;
+    transition: all 0.2s;
+}
+
+/* nav gnb의 gnb-sub */
+.nav>.gnb .gnb-sub {
+    position: absolute;
+    margin-top: 10px;
+    visibility: hidden;
+}
+.nav>.gnb .gnb-sub>li {
+    margin: 4px 0;
+}
+
+.backgroud {
+    position: absolute;
+    display: inline-block;
+    background-color: aquamarine;
+    width: 100%;
+    height: 0px;
+}

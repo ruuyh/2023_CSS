@@ -1,0 +1,12 @@
+.col {
+    background-color: antiquewhite;
+    column-count: 3;
+    column-rule: solid burlywood 2px;
+    column-gap: 30px;
+    padding: 10px;
+}
+
+.span-all {
+    column-span: all;
+    background-color: cadetblue;
+}

@@ -1,0 +1,157 @@
+.outbox p {
+    background-color: yellow;
+}
+.outbox>p {
+    background-color: blue;
+}
+.sibling~p {
+    background-color: cadetblue;
+}
+/* +를 사용할때는 바로 뒤에 있는 태그만 찾을수 있다 */
+.sibling+a {
+    /*바로뒤에 있지않기에 찾을 수 없음*/
+    background-color: aqua;
+}
+.sibling+p {
+    background-color: aqua;
+}
+
+.test {
+    background-color: brown;
+}
+
+.input-focus:focus {
+    background-color: coral;
+    color: antiquewhite;
+}
+
+.input-focus:focus+p {
+    color: blue;
+}
+.state>input:checked+span {
+    color: gray;
+}
+.state>input:disabled+span {
+    text-decoration: line-through 1px solid;
+}
+
+.menu-list>li:first-child {
+    background-color: cornflowerblue;
+}
+.menu-list>li:last-child {
+    background-color: aquamarine;
+}
+
+.menu-list>li:nth-child(2n) {
+    color: brown;
+}
+
+.table-color {
+    border-collapse: collapse;
+}
+/*자손이므로 tbody 무시*/
+.table-color tr:first-child{
+    background-color: yellow;
+}
+/*자식이므로 tbody 추가*/
+.table-color>tbody>tr:last-child {
+    background-color: aqua;
+}
+
+/*위의 선택자 중 하나를 이용해서 짝수 색만 바꾸기*/
+.table-color tr:nth-child(2n) {
+    background-color: blueviolet;
+}
+
+.child-tag>p:first-child {
+    color: blue;
+}
+.child-tag>h1 {
+    color:brown
+}
+
+/*클래스를 지정하고 자손으로 타입찾기*/
+.of-type p:first-of-type {
+    color:red
+}
+
+/*
+클래스를 지정하고 자식으로 타입찾기
+first-child와 동일한 역할
+*/
+.of-type>p:first-of-type {
+    background-color: bisque;
+}
+
+.first-letter:hover:first-letter {
+    color: blue;
+    font-size: 1.5rem;
+}
+
+.first-line::first-line {
+    background-color: yellow;
+}
+
+.before::before {
+    /*content를 넣어서 내용 추가*/
+    /*글자, url 을 통해 이미지 추가*/
+    content: url(./img/pencil-solid.svg);
+    /*inline-block을 넣어서 크기조절*/
+    display: inline-block;
+    width: 20px;
+}
+
+.before-color::before {
+    content: "";
+    background-color: yellow;
+    /*content에 글자가 없을때, inline-block사용*/
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.after::after {
+    /*content 속성을 사용*/
+    content: "추가";
+    background-color: yellow;
+    padding: 5px;
+    border-radius: 20px;
+}
+.after-color:hover:after {
+    content: "추가된 글자";
+    color: #ffffff;
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+}
+
+.before-image::before {
+    content: "";
+    /*content로 이미지 크기 수정 어려움(고정)*/
+    /*크기 수정이 가능한 background-image로 추가*/
+    background-image: url(./img/bird.jpg);
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+}
+.attr>input[type="checkbox"]:checked+span {
+    color: crimson;
+}
+
+.attr>input[type="radio"]:checked+span {
+    text-decoration: underline wavy;
+}
+
+.attr>input[type="button"] {
+    background-color: #000;
+    color: #ffffff;
+}
+
+.attr>input[type="radio"][value="group"] {
+    /*두개이상의 속성이름과 속성값을 가진 태그를 찾을수 있다*/
+}

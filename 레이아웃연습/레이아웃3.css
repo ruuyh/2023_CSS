@@ -1,0 +1,53 @@
+body { margin: 0; padding: 0;}
+
+.wrap {
+    width: 1000px;
+    margin: auto;
+    background-color: purple;
+    font-size: 2rem;
+    overflow: auto;
+}
+/* float 와 margin 사용*/
+/* 하나의 크기가 고정되고 나머지가 유동적일때 사용*/
+.wrap>.aside {
+    float: left;
+    width: 300px; height: 500px;
+    background-color: plum;
+}
+
+.wrap>.main {
+    margin-left: 300px;
+    background-color: gray;
+    height: 500px;
+}
+
+.main>.header {
+    height: 100px;
+    background-color: blueviolet;
+}
+.main>.content {
+    height: 320px;
+    background-color: violet;
+}
+.main>.footer {
+    height: 80px;
+    background-color: rgb(255, 0, 247);
+}
+
+/*wrap - grid*/
+.wrap-grid {
+    width: 1000px; margin: auto;
+    display: grid;
+    grid-template-columns: 300px 700px;
+}
+
+/* float 두번째 사용방법 */
+/*두개의 내용에 각각 float를 사용해서 크기를 고정*/
+.wrap-float2>.aside {
+    float: left;
+    width: 300px; height: 500px;
+}
+.wrap-float2>.main {
+    float: left;
+    width: 700px;
+}
